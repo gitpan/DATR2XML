@@ -1,11 +1,10 @@
 <!--DATR1.0.dtd - DATR in XML: VERSION 1.0
-	
 	Copyright (C) Lee Goddard, 1/6/00 and after. All Rights Reserved.
 	This DTD is supplied under the GNU PUBLIC LICENSE (www.gnu.org).
 -->
 
-<!-- The root element DATR may contain exactly one each of HEADER, OPENING 
-     CLOSING elements, and one or many EQUATION elements.  
+<!-- The root element DATR may contain exactly one each of HEADER, OPENING
+     CLOSING elements, and one or many EQUATION elements.
      Elements must appear in the order: HEADER, OPENING, EQUATION, CLOSING.  -->
 <!ELEMENT DATR (HEADER?,OPENING?,EQUATION*,CLOSING?)>
 
@@ -22,8 +21,8 @@
 <!ATTLIST META		name	CDATA #REQUIRED
 					content	CDATA #REQUIRED >
 
-<!-- OPENING and CLOSING elements may contain any number of 
-     LOAD, VARS, RESET, ATOM or NODE, SHOW elements 
+<!-- OPENING and CLOSING elements may contain any number of
+     LOAD, VARS, RESET, ATOM or NODE, SHOW elements
      Note that ATOM may be included in the body but that
      NODE is unquite. -->
 <!ELEMENT OPENING 	(LOAD|VARS|RESET|ATOM|NODE|SHOW|COMMENT|DELETE)*>
@@ -51,7 +50,7 @@
 <!ATTLIST VARS		name	CDATA #REQUIRED
 					range	NMTOKENS #REQUIRED
 					comment CDATA #IMPLIED>
-     
+
 <!-- The RESET element may not wrap other elements, and
      may contain a 'value' attribute of character data.
      May also contain a 'comment' attribute of character data. -->
@@ -86,7 +85,7 @@
 					path	CDATA ""
 					type	(DEFINE|EXTEND) "DEFINE"
 					comment	CDATA #IMPLIED>
-					
+
 <!-- Empty element to represent the ? of DATR  -->
 <!ELEMENT QUERY 	EMPTY>
 

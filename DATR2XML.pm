@@ -1,12 +1,12 @@
-#! perl
+#! perl -w
 
 package DATR2XML;
-$MOD_NAME	= "DATR2XML.pm build 0.75";	# Name of this module
+$VERSION	= "0.8";			# This version
+$MOD_NAME	= "DATR2XML.pm ";	# Name of this module
 
-# Author:		Lee Goddard <code@leegoddard.com>
+# Author:		Lee Goddard <lgoddard@cpan.org>
 # Copyright:	GNU GPL: please see end of file.
 # Filename:		DATR2XML.pm
-# Version: 		DATR2XML.pm v0.75 28/08/00 15:26
 
 =head1 NAME
 
@@ -14,7 +14,7 @@ DATR2XML.pm - routines for converting DATR .dtr files to XML
 
 =head1 SYNOPSIS
 
-	#! perl
+	#! perl -w
 	use DATR2XML;
 
 	undef $DATR2XML::includeNodePath;
@@ -369,7 +369,7 @@ sub set_schema{
 		$datr_root = "<DATR>";
 		print "Removed reference to an XML Schema" if $log;		# Notify user if logging
 	}
-	elsif ($_[0] = 1){
+	elsif ($_[0] == 1){
 		$datr_root = "http://www.leegoddard.com/DATR/DTD/DATR1.0.xml";
 		print "Set XML Schema location to $_[0].\n" if $log;	# Notify user if logging
 	}
@@ -1436,8 +1436,7 @@ sub _printOpeningClosing {
 
 
 
-# Exit the module
-return 1;
+1;# Exit the module
 
 __END__;
 
